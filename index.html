@@ -1,40 +1,171 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="theme-auto">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light">
     <title>Сложно сосредоточиться</title>
-    <script src="./scripts/script.js"></script>
+    
+    <!-- Фавиконки -->
+    <link rel="icon" href="./images/favicon.ico" sizes="any">
+    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Стили в правильном порядке -->
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/dark.css">
+    <link rel="stylesheet" href="./styles/light.css">
+    <link rel="stylesheet" href="./styles/theme-auto.css">
   </head>
   <body class="page">
     <header class="header decorated-zone">
       <nav class="header__theme-menu">
         <ul class="header__theme-menu-list">
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_type_light">
               День
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto" disabled>
               Авто
             </button>
           </li>
           <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
+            <button class="header__theme-menu-button header__theme-menu-button_type_dark">
               Неон
             </button>
           </li>
         </ul>
       </nav>
+      
+      <div class="header__content">
+        <span class="header__decorative-text" aria-hidden="true">REC</span>
+        <h1 class="header__title">Сложно сосредоточиться</h1>
+        <div class="header__text">
+          <p class="title-decor">Что мешает нам достигать целей и как с этим бороться</p>
+        </div>
+      </div>
     </header>
+
+    <main class="main">
+      <!-- Секция "Почему так происходит?" -->
+      <section class="section reasons">
+        <h2 class="section__title">Почему так происходит?</h2>
+        <div class="section__content">
+          <article class="card">
+            <h3 class="card__title title-decor">Многозадачность</h3>
+            <p class="card__text">
+              Особенно сильно многозадачность влияет на людей, занимающихся творческими задачами. 
+              Ведь для поиска нестандартных решений нужны сосредоточенность и глубина погружения.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3 class="card__title title-decor">Слишком много информации</h3>
+            <p class="card__text">
+              Когда в наш мозг поступает слишком много информации, он пытается отсечь всё лишнее и 
+              сконцентрироваться на чём-то одном. Но часто бывает сложно понять, что именно важно, 
+              а что — нет.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3 class="card__title title-decor">Усталость</h3>
+            <p class="card__text">
+              Состояние усталости и отсутствия энергии — ещё одна причина, по которой нам бывает 
+              сложно сосредоточиться. Когда мы устаём, наша способность концентрироваться снижается.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Секция "Что можем сделать?" -->
+      <section class="section solutions">
+        <h2 class="section__title">Что можем сделать?</h2>
+        <div class="section__content">
+          <article class="card">
+            <h3 class="card__title title-decor">Убрать лишнее</h3>
+            <p class="card__text">
+              Уберите со стола лишние предметы, закройте вкладки в браузере, отключите уведомления 
+              на телефоне. Создайте себе пространство для концентрации.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3 class="card__title title-decor">Определить приоритеты</h3>
+            <p class="card__text">
+              Решите, какая задача для вас最重要, и сконцентрируйтесь на ней. Не пытайтесь сделать 
+              всё и сразу — это только усилит стресс и снизит продуктивность.
+            </p>
+          </article>
+          
+          <article class="card">
+            <h3 class="card__title title-decor">Найти своё время</h3>
+            <p class="card__text">
+              Некоторые люди более продуктивны утром, другие — вечером. Определите, в какое время 
+              суток вы работаете наиболее эффективно, и планируйте важные задачи на этот период.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Секция "Как концентрироваться лучше, чем рыба?" -->
+      <section class="section concentration">
+        <h2 class="section__title">Как концентрироваться лучше, чем рыба?</h2>
+        <div class="section__content">
+          <div class="card">
+            <h3 class="card__title title-decor">Техника Pomodoro</h3>
+            <p class="card__text">
+              Работайте блоками по 25 минут, после чего делайте перерыв на 5 минут. 
+              После четырёх таких блоков отдохните 15-30 минут. Это поможет поддерживать 
+              высокий уровень концентрации в течение всего дня.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="card__title title-decor">Медитация</h3>
+            <p class="card__text">
+              Регулярная практика медитации помогает тренировать способность к концентрации. 
+              Начните с 5-10 минут в день и постепенно увеличивайте продолжительность сеансов.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="card__title title-decor">Физическая активность</h3>
+            <p class="card__text">
+              Регулярные физические упражнения улучшают кровоснабжение мозга и помогают 
+              поддерживать ясность ума. Даже короткая прогулка может помочь восстановить 
+              концентрацию.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Галерея -->
+      <section class="section gallery">
+        <h2 class="section__title">Галерея фокуса</h2>
+        <div class="gallery__grid">
+          <img src="./images/sunset.png" alt="Закат над морем" class="gallery__image" loading="lazy">
+          <img src="./images/ice-cream.png" alt="Мороженое" class="gallery__image" loading="lazy">
+          <img src="./images/tape.png" alt="Аудиокассета" class="gallery__image" loading="lazy">
+          <img src="./images/books.png" alt="Стопка книг" class="gallery__image" loading="lazy">
+          <img src="./images/street.png" alt="Улица в сумерках" class="gallery__image" loading="lazy">
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer decorated-zone">
+      <h2 class="footer__title">Сложно сосредоточиться</h2>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

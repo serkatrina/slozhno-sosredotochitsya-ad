@@ -9,8 +9,29 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: #FF0070;
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --background-color: #000028;
+  --shadow-color: #FF0070;
+  --button-hover: rgba(255, 0, 112, 0.40);
+  --section-title: #FF0070;
+  --card-title: #000028;
+  --decorated-color: #FF0070;
+  --background-image: url(../images/cover-image-dark.png);
 }
 
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+.theme-dark .header__decorative-text {
+  display: block;
+}
+
+.theme-dark .header__decorative-text::after {
+  background-color: var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button_active,
+.theme-dark .header__theme-menu-button:disabled {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
 }

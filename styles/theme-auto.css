@@ -1,0 +1,30 @@
+/*
+  Стили для автоматической темы (системные настройки)
+*/
+
+:root.theme-auto {
+  /* Возвращаем управление системным настройкам */
+  /* Переменные будут браться из variables.css и медиазапросов */
+}
+
+.theme-auto .header__decorative-text {
+  /* Показываем REC только в тёмной теме системных настроек */
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme-auto .header__decorative-text {
+    display: block;
+  }
+  
+  .theme-auto .header__decorative-text::after {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 4px 2px var(--accent-color);
+  }
+}
+
+.theme-auto .header__theme-menu-button_active,
+.theme-auto .header__theme-menu-button:disabled {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
