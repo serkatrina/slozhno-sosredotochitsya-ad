@@ -15,7 +15,6 @@
   --card-title: #000028;
   --decorated-color: #FF0070;
   --background-image: url(../images/cover-image-dark.png);
-  --menu-accent: #FF0070;
 }
 
 /* Светлая тема по предпочтениям системы */
@@ -31,6 +30,5 @@
     --card-title: #353430;
     --decorated-color: #353430;
     --background-image: url(../images/cover-image-light.png);
-    --menu-accent: #353430;
   }
 }
