@@ -231,15 +231,18 @@ a:focus-visible {
     margin-block-start: 173px;
   }
   
+  .header__theme-menu {
+    align-self: end;
+  }
+  
   .header__theme-menu-list {
     flex-direction: row;
-    justify-content: center;
     gap: 10px;
   }
   
   .header__text {
     margin-block-start: 162px;
-    max-inline-size: 491px;
+    max-inline-size: 364px;
   }
   
   .header__title {
@@ -254,8 +257,44 @@ a:focus-visible {
   .section {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
-    align-items: start;
   }
+  
+  /* Специфичные стили для секции концентрации */
+  .concentration .section__content {
+    grid-column: 1 / -1;
+  }
+  
+  /* Галерея */
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .gallery__image:nth-child(1) {
+    grid-column: span 2;
+  }
+  
+  .gallery__image:nth-child(2) {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+  
+  .gallery__image:nth-child(3) {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+  
+  .gallery__image:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  
+  .gallery__image:nth-child(5) {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
+}
   
   /* Специфичные стили для секции концентрации на планшете */
   .section.concentration .section__content {
@@ -300,80 +339,41 @@ a:focus-visible {
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
-}
-
-/* Десктоп (1024px и больше) */
 @media (min-width: 1024px) {
   .header__theme-menu {
-    align-self: center;
-    justify-self: start;
-    margin-inline-start: 20px;
+    align-self: start;
+    margin-inline-start: 0;
   }
   
   .header__theme-menu-list {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 10px;
   }
   
   .header__content {
-    margin-block-start: 0;
-    align-self: center;
+    margin-block-start: 173px;
   }
   
   .header__text {
     margin-block-start: 114px;
+    max-inline-size: 491px;
   }
   
-  /* Сетка для секций на десктопе */
-  .section.reasons .section__content,
-  .section.solutions .section__content {
+  /* Сетка для секций */
+  .reasons .section__content,
+  .solutions .section__content {
+    grid-column: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
   
-  .section.reasons .section__title,
-  .section.solutions .section__title {
-    grid-column: 1 / -1;
-  }
-  
-  .section.concentration {
-    grid-template-columns: 1fr 2fr;
-  }
-  
-  .section.concentration .section__content {
+  .concentration .section__content {
     grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
-  /* Галерея на десктопе */
-  .gallery__grid {
-    gap: 25px 20px;
-  }
-  
-  .gallery__image:nth-child(1) {
-    grid-column: span 2;
-  }
-  
-  .gallery__image:nth-child(2) {
-    grid-column: 3;
-    grid-row: span 2;
-  }
-  
-  .gallery__image:nth-child(3) {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-  }
-  
-  .gallery__image:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  
-  .gallery__image:nth-child(5) {
-    grid-column: 2 / span 2;
-    grid-row: 3;
-  }
 }
+
+
