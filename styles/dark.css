@@ -35,3 +35,53 @@
   border: 1px solid var(--accent-color);
   pointer-events: none;
 }
+
+/* Дополнительные исправления для соответствия макету */
+
+/* Тень для заголовков */
+.theme-dark .header__title {
+  text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.theme-dark .footer__title {
+  text-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+/* Стили для ссылок */
+.theme-dark a {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.theme-dark a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.theme-dark a:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Стили для кнопок меню */
+.theme-dark .header__theme-menu-button {
+  color: var(--accent-color);
+}
+
+.theme-dark .header__theme-menu-button:hover {
+  border: 1px solid var(--button-hover);
+}
+
+.theme-dark .header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+/* Декоративные элементы */
+.theme-dark .decorated-zone::before,
+.theme-dark .decorated-zone::after {
+  border-color: var(--accent-color);
+}
+
+/* Убедимся, что фоновое изображение применяется правильно */
+.theme-dark .page {
+  background-image: var(--background-image);
+  background-color: var(--background-color);
+}

@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--background-color);
   background-image: var(--background-image);
   background-repeat: no-repeat;
@@ -231,15 +228,6 @@ a:focus-visible {
     margin-block-start: 173px;
   }
   
-  .header__theme-menu {
-    align-self: end;
-  }
-  
-  .header__theme-menu-list {
-    flex-direction: row;
-    gap: 10px;
-  }
-  
   .header__text {
     margin-block-start: 162px;
     max-inline-size: 364px;
@@ -263,38 +251,6 @@ a:focus-visible {
   .concentration .section__content {
     grid-column: 1 / -1;
   }
-  
-  /* Галерея */
-  .gallery__grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 20px;
-  }
-  
-  .gallery__image:nth-child(1) {
-    grid-column: span 2;
-  }
-  
-  .gallery__image:nth-child(2) {
-    grid-column: 3;
-    grid-row: span 2;
-  }
-  
-  .gallery__image:nth-child(3) {
-    grid-column: 1;
-    grid-row: span 2;
-  }
-  
-  .gallery__image:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  
-  .gallery__image:nth-child(5) {
-    grid-column: 2 / span 2;
-    grid-row: 3;
-  }
-}
   
   /* Специфичные стили для секции концентрации на планшете */
   .section.concentration .section__content {
@@ -339,9 +295,12 @@ a:focus-visible {
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
+}
+
+/* Десктоп (1024px и больше) */
 @media (min-width: 1024px) {
   .header__theme-menu {
-    align-self: start;
+    align-self: center;
     margin-inline-start: 0;
   }
   
@@ -359,7 +318,11 @@ a:focus-visible {
     max-inline-size: 491px;
   }
   
-  /* Сетка для секций */
+  /* Сетка для секций на десктопе */
+  .section {
+    grid-template-columns: 1fr 2fr;
+  }
+  
   .reasons .section__content,
   .solutions .section__content {
     grid-column: 2;
@@ -369,11 +332,16 @@ a:focus-visible {
   }
   
   .concentration .section__content {
-    grid-column: 2;
-    display: flex;
-    flex-direction: column;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  /* Галерея на десктопе */
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 20px;
   }
 }
-
-
