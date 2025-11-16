@@ -15,6 +15,7 @@
   --card-title: #000028;
   --decorated-color: #FF0070;
   --background-image: url(../images/cover-image-dark.png);
+  --rec-color: #FF0070;
 }
 
 .theme-dark .header__decorative-text {
