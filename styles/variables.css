@@ -16,4 +16,5 @@
   --decorated-color: #FF0070;
   --background-image: url(../images/cover-image-dark.png);
   --rec-color: #FF0070;
+  --main-font: 'IBM Plex mono', monospace;
 }
