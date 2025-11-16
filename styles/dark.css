@@ -1,4 +1,3 @@
-/* dark.css */
 /*
   Специально для тёмной темы при наличии класса,
   здесь окажутся стили, которые нужно переопределить принудительно,
@@ -20,4 +19,10 @@
 
 .theme-dark .header__decorative-text {
   display: block;
+}
+
+.theme-dark .header__theme-menu-button_active,
+.theme-dark .header__theme-menu-button:disabled {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
 }

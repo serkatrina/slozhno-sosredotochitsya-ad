@@ -261,6 +261,7 @@
     gap: 80px;
   }
   
+  /* ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ */
   .section {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
@@ -277,6 +278,7 @@
   
   .concentration .section__title {
     grid-row: 1;
+    max-width: 236px;
   }
   
   .concentration .section__content {
@@ -286,11 +288,11 @@
     gap: 20px;
   }
   
-  /* ГАЛЕРЕЯ НА ПЛАНШЕТЕ - ИСПРАВЛЕНО */
+  /* ГАЛЕРЕЯ */
   .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(auto, 1fr));
+    grid-template-rows: repeat(3, auto);
     gap: 20px;
   }
   
@@ -327,8 +329,8 @@
 /* Десктоп (1024px и больше) */
 @media (min-width: 1024px) {
   .header__theme-menu {
-    align-self: start;
-    margin-inline-start: 20px;
+    align-self: center;
+    margin-inline-start: 0;
   }
   
   .header__theme-menu-list {
@@ -354,16 +356,18 @@
     grid-template-columns: 1fr 2fr;
   }
   
-  .reasons .section__content,
-  .solutions .section__content {
+  /* Секция "Почему так?" */
+  .reasons .section__content {
     grid-column: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
   }
   
+  /* Секция "Что мешает?" */
   .concentration {
     grid-template-columns: 1fr;
+  }
+  
+  .concentration .section__title {
+    max-width: 315px;
   }
   
   .concentration .section__content {
@@ -373,12 +377,23 @@
     gap: 20px;
   }
   
-  /* ГАЛЕРЕЯ НА ДЕСКТОПЕ - ИСПРАВЛЕНО */
+  /* Секция "Как сосредоточиться?" */
+  .solutions .section__content {
+    grid-column: 2;
+    display: block;
+  }
+  
+  .solutions .card {
+    margin-bottom: 20px;
+  }
+  
+  .solutions .card:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* ГАЛЕРЕЯ */
   .gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-rows: repeat(3, 260px);
   }
   
   .gallery__image:nth-child(1) {
