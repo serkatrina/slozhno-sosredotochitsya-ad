@@ -11,7 +11,6 @@
   color: var(--text-color, #F1B2CE);
 }
 
-/* Header */
 .header {
   padding: 20px;
   position: relative;
@@ -83,6 +82,9 @@
 
 .header__content {
   margin-block-start: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .header__decorative-text {
@@ -110,18 +112,20 @@
   font-weight: 700;
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--shadow-color, #FF0070);
+  align-self: start;
+  padding-bottom: 30px;
 }
 
 .header__text {
-  margin-block-start: 55px;
+  margin-block-start: 35px;
   background-color: var(--accent-color, #FF0070);
   color: var(--card-title, #000028);
   font-weight: 700;
   font-size: 18px;
   line-height: 1.3;
-  padding: 0;
-  max-inline-size: 364px;
-  align-self: end;
+  max-inline-size: 491px;
+  text-align: left;
+  margin-bottom: 120px;
 }
 
 .title-decor {
@@ -132,7 +136,6 @@
   line-height: 1.3;
 }
 
-/* Main content */
 .main {
   padding: 40px 20px;
   display: flex;
@@ -170,6 +173,13 @@
   color: var(--card-title, #000028);
 }
 
+.card__subtitle {
+  font-size: 18px;
+  background-color: var(--accent-color, #FF0070);
+  color: var(--card-title, #000028);
+  font-weight: 700;
+}
+
 .card__text {
   line-height: 1.3;
 }
@@ -192,7 +202,6 @@
   outline-offset: 2px;
 }
 
-/* Gallery */
 .gallery {
   display: flex;
   flex-direction: column;
@@ -206,24 +215,23 @@
 }
 
 .gallery__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  gap: 20px;
 }
 
 .gallery__image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Footer */
 .footer {
   padding: 20px;
   position: relative;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__title {
@@ -234,9 +242,6 @@
   text-shadow: 2px 2px 0 var(--shadow-color, #FF0070);
 }
 
-/* ===== МЕДИАЗАПРОСЫ ===== */
-
-/* Планшеты (768px и больше) */
 @media (min-width: 768px) {
   .header {
     padding: 20px;
@@ -247,7 +252,7 @@
   }
   
   .header__text {
-    margin-block-start: 162px;
+    margin-block-start: 132px;
     max-inline-size: 364px;
   }
   
@@ -261,7 +266,6 @@
     gap: 80px;
   }
   
-  /* ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ */
   .section {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
@@ -271,7 +275,6 @@
     grid-row: 1 / -1;
   }
   
-  /* Специфичные стили для секции концентрации */
   .concentration {
     grid-template-columns: 1fr;
   }
@@ -288,37 +291,40 @@
     gap: 20px;
   }
   
-  /* ГАЛЕРЕЯ */
+  .solutions .section__content {
+    grid-column: 1 / -1;
+  }
+  
   .gallery__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, minmax(100px, auto));
     gap: 20px;
   }
   
   .gallery__image:nth-child(1) {
-    grid-column: span 2;
-    grid-row: 1;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
   }
   
   .gallery__image:nth-child(2) {
-    grid-column: 3;
-    grid-row: span 2;
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
   }
   
   .gallery__image:nth-child(3) {
-    grid-column: 1;
-    grid-row: span 2;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
   }
   
   .gallery__image:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
   }
   
   .gallery__image:nth-child(5) {
-    grid-column: span 2;
-    grid-row: 3;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
   }
   
   .footer__title {
@@ -326,42 +332,39 @@
   }
 }
 
-/* Десктоп (1024px и больше) */
 @media (min-width: 1024px) {
   .header__theme-menu {
     align-self: center;
-    margin-inline-start: 0;
+    justify-self: start;
   }
   
   .header__theme-menu-list {
     flex-direction: row;
-    gap: 10px;
   }
   
   .header__content {
     margin-block-start: 173px;
+    align-items: end;
   }
   
   .header__text {
-    margin-block-start: 114px;
+    margin-block-start: 84px;
     max-inline-size: 491px;
   }
   
   .header__title {
     text-shadow: 4px 4px 0 var(--shadow-color, #FF0070);
+    align-self: start;
   }
   
-  /* Сетка для секций на десктопе */
   .section {
     grid-template-columns: 1fr 2fr;
   }
   
-  /* Секция "Почему так?" */
   .reasons .section__content {
     grid-column: 2;
   }
   
-  /* Секция "Что мешает?" */
   .concentration {
     grid-template-columns: 1fr;
   }
@@ -377,10 +380,8 @@
     gap: 20px;
   }
   
-  /* Секция "Как сосредоточиться?" */
   .solutions .section__content {
-    grid-column: 2;
-    display: block;
+    grid-column: 1 / -1;
   }
   
   .solutions .card {
@@ -391,33 +392,33 @@
     margin-bottom: 0;
   }
   
-  /* ГАЛЕРЕЯ */
   .gallery__grid {
-    grid-template-rows: repeat(3, 260px);
+    grid-template-rows: repeat(3, minmax(100px, 260px));
+    gap: 20px;
   }
   
   .gallery__image:nth-child(1) {
-    grid-column: span 2;
-    grid-row: 1;
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
   }
   
   .gallery__image:nth-child(2) {
-    grid-column: 3;
-    grid-row: span 2;
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
   }
   
   .gallery__image:nth-child(3) {
-    grid-column: 1;
-    grid-row: span 2;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
   }
   
   .gallery__image:nth-child(4) {
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
   }
   
   .gallery__image:nth-child(5) {
-    grid-column: span 2;
-    grid-row: 3;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
   }
 }
